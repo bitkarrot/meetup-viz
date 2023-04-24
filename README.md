@@ -2,4 +2,4 @@
 
 The Plan: 
 
-12 years of Bitcoin HK Meetup Data visualized with Dash/Plotly. 
+12 years of Meetup Data visualized with Dash/Plotly. 
