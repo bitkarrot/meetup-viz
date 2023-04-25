@@ -9,7 +9,7 @@ This is a template that can be used with any Meetup data
 
 minimum requirements poetry 1.4 (including OSX and ubuntu)
 
-``` 
+```sh
 poetry env use python3.9
 poetry shell
 poetry install --only main 
