@@ -13,5 +13,17 @@ minimum requirements poetry 1.4 (including OSX and ubuntu)
 poetry env use python3.9
 poetry shell
 poetry install --only main 
-python app.py
+gunicorn app:server
 ```
+
+## deploy 
+
+deploy on fly.io using the Docker container with
+
+```sh
+ fly launch --dockerfile Dockerfile
+```
+
+libraries are too heavy on other clouds, so Docker will do
+
+todo: setup ci/ci pipeline with fly.io
