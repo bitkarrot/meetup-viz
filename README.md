@@ -16,9 +16,20 @@ poetry install --only main
 gunicorn app:server
 ```
 
-## deploy 
+## Docker
+
+how to build the docker image locally and run it
+
+```
+docker build -t meetup .
+docker run -p 8000:8000 meetup
+
+```
+
+## deploy to fly.io
 
 deploy on fly.io using the Docker container with
+
 
 ```sh
  fly launch --dockerfile Dockerfile
@@ -26,4 +37,5 @@ deploy on fly.io using the Docker container with
 
 libraries are too heavy on other clouds, so Docker will do
 
-todo: setup ci/ci pipeline with fly.io
+For more information on Fly.io see: 
+https://fly.io/docs/languages-and-frameworks/python/

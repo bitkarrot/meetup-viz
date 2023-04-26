@@ -2,12 +2,23 @@ FROM python:3.9-slim-buster
 
 WORKDIR /app
 
+# Install dependencies
+RUN apt-get update && \
+    apt-get install -y curl python3-distutils software-properties-common && \
+    # add-apt-repository ppa:deadsnakes/ppa \
+    # apt install python3.9 python3.9-distutils \
+    rm -rf /var/lib/apt/lists/*
+
+# Download and install Poetry
+RUN curl -sSL https://install.python-poetry.org | python3 - --version 1.4.0
+ENV PATH="/root/.local/bin:${PATH}"
+ENV PATH="/root/.poetry/bin:${PATH}"
+
+
 # Copy the current directory contents into the container at /app
 COPY . /app
 
-# Install Poetry and dependencies
-RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
-RUN poetry install --no-root --no-dev
+RUN poetry install 
 
 # Expose port 8000 for gunicorn
 EXPOSE 8000
