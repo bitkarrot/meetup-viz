@@ -39,3 +39,18 @@ libraries are too heavy on other clouds, so Docker will do
 
 For more information on Fly.io see: 
 https://fly.io/docs/languages-and-frameworks/python/
+
+
+## Ideation
+
+https://www.data-to-viz.com/
+
+https://gist.github.com/alexcjohnson/a4b714eee8afd2123ee00cb5b3278a5f
+
+https://dash.plotly.com/d3-react-components
+
+https://nicolashery.com/integrating-d3js-visualizations-in-a-react-app/
+
+multipage apps 
+
+https://dash.plotly.com/urls
