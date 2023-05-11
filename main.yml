@@ -1,0 +1,27 @@
+name: Deploy to Fly.io
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build Docker image
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        push: false
+        tags: my-image:${{ github.sha }}
+
+    - name: Deploy to Fly.io
+      uses: superfly/flyctl-actions@v0.4.0
+      with:
+        args: deploy --image my-image:${{ github.sha }} --app my-app
+        token: ${{ secrets.FLY_API_TOKEN }}
