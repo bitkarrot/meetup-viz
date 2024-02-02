@@ -8,7 +8,7 @@ authors = ["bitkarrot <73979971+bitkarrot@users.noreply.github.com>"]
 python = "^3.9"
 pandas = "^2.0.1"
 plotly = "^5.14.1"
-dash = "^2.9.3"
+dash = "^2.15.0"
 dash-bootstrap-components = "^1.4.1"
 gunicorn = "^20.1.0"
 
